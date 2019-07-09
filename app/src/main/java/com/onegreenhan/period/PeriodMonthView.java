@@ -12,7 +12,6 @@ import com.haibin.calendarview.MonthView;
  * 下标标记的日历控件
  * Created by huanghaibin on 2017/11/15.
  */
-
 public class PeriodMonthView extends MonthView {
     private int mPadding;
     private int mH, mW;

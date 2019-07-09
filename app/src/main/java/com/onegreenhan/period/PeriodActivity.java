@@ -63,7 +63,7 @@ public class PeriodActivity extends AppCompatActivity implements com.haibin.cale
         int y = mCalendarView.getCurYear();//获取年
         int m = mCalendarView.getCurMonth();//获取月
         tvMonth.setText(y + "年" + m + "月");
-        mCalendarView.setRange(m == 1 ? y - 1 : y, m == 1 ? 12 : m - 1, 1, m == 12 ? y + 1 : y, m == 12 ? 1 : m + 1, 31);//限制选择范围
+        mCalendarView.setRange(m == 1 ? y - 1 : y, m == 1 ? 12 : m - 1, 1, m == 12 ? y + 1 : y, m == 12 ? 1 : m + 1, 31);//限制选择范围(限制只显示前后一个月)
         mCalendarView.scrollToCurrent();//滚动到今天
         setDatas(y, m);//填充数据,可自行计算或者后台返回，这里是固定数据
     }
@@ -95,7 +95,7 @@ public class PeriodActivity extends AppCompatActivity implements com.haibin.cale
      * 后面可根据经期计算规则自由组装数据然后填充，或者叫后台直接返回，嘿嘿
      * 目前经期数据为固定显示：10号为排卵日，月经期为24-28，易孕为6-9和11-15，其他均为安全期
      * 这里暂时将标记类型作为不同经期判断处理： period为月经期 security为安全期 yiyun易孕期 ovulation排软日(只设置了一天)
-     * 如果需要用到标记，可下载他的library修改，根据Calendar类的getScheme()方法进行修改
+     * 如果需要用到标记，可下载他的library修改，按照Calendar类的getScheme()方式，自行添加字段，可参考 https://blog.csdn.net/a295268305/article/details/94877628
      *
      * @param y 年
      * @param m 月
